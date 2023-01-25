@@ -17,7 +17,6 @@ function enemyAttack() {
   if (attackedPlayerFields.includes(field)) {
     while (attackedPlayerFields.includes(field)) {
       field = getRandomField();
-      console.log(field);
     }
   }
   attackedPlayerFields.push(field);
@@ -36,17 +35,33 @@ function enemyAttack() {
     });
   }
   let attackedCorrectPlayerShips = 0;
-  const root = document.querySelector(".root");
-  playerShips.forEach((element) => {
-    if (attackedPlayerFields.includes(element)) {
-      attackedCorrectPlayerShips = attackedCorrectPlayerShips + 1;
+  let attackedCorrectEnemyShips = 0;
+  gameEnd(
+    enemyShips,
+    attackedEnemyFields,
+    attackedCorrectPlayerShips,
+    "Computer"
+  );
+  gameEnd(
+    playerShips,
+    attackedPlayerFields,
+    attackedCorrectEnemyShips,
+    "Player"
+  );
+}
+
+function gameEnd(ships, attacheckShips, attackedCorrectShips, winner) {
+  ships.forEach((element) => {
+    if (attacheckShips.includes(element)) {
+      attackedCorrectShips = attackedCorrectShips + 1;
     }
   });
-  if (attackedCorrectPlayerShips === 1) {
+  if (attackedCorrectShips === 1) {
+    const root = document.querySelector(".root");
     const mainPlane = document.querySelector(".mainPlane");
     root.remove();
     const header = document.createElement("h1");
-    header.textContent = "Computer Won!";
+    header.textContent = `${winner} Won!`;
     mainPlane.appendChild(header);
   }
 }
