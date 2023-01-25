@@ -8,13 +8,21 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1 class="text">Your Ships</h1>
-    <div class="yourShipsContainer"></div>
-    <button onclick="startGame()" class="startGame">Start Game</button>
-    <div class="enemyShips hidden">
-      <h1 class="text">Enemy Ships</h1>
-      <div class="enemyShipsContainer"></div>
+    <div class="mainPlane">
+      <div class="root">
+        <h1 class="text">Your Ships</h1>
+        <div class="yourShipsContainer"></div>
+        <button onclick="startGame()" class="startGame">Start Game</button>
+        <div class="enemyShips hidden">
+          <h1 class="text">Enemy Ships</h1>
+          <div class="enemyShipsContainer"></div>
+        </div>
+      </div>
     </div>
+    <script src="gameInformation.js"></script>
+    <script src="utils.js"></script>
+    <script src="enemy.js"></script>
+    <script src="player.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
