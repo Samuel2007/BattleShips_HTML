@@ -88,6 +88,7 @@ function enemyAttack() {
       console.log(field);
     }
   }
+  console.log("s");
   attackedPlayerFields.push(field);
   const yourFields = document.querySelectorAll(".yourCell");
   if (playerShips.includes(field)) {
