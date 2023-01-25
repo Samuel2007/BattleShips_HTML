@@ -1,0 +1,45 @@
+.text {
+  color: red;
+}
+.yourShipsContainer,
+.enemyShipsContainer {
+  background-color: rgb(0, 0, 0);
+  border: 5px solid rgb(0, 0, 0);
+  height: 600px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex: 1;
+}
+.row > div {
+  display: flex;
+  flex: 1;
+  border: 1px solid rgb(0, 0, 255);
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 255);
+  border: 2px solid rgb(0, 0, 0);
+}
+.row > div:hover {
+  opacity: 0.5;
+}
+.changeColor {
+  background-color: red !important;
+}
+.enemyShipHit {
+  background-color: green !important;
+}
+.yourShipHit {
+  background-color: yellow !important;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+.hidden {
+  display: none;
+}
